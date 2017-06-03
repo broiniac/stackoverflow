@@ -13,18 +13,6 @@
     <?php
     include_once 'koneksi.php';
 
-    /**
-     * @param mixed ...$vars
-     */
-    function dump(...$vars)
-    {
-        foreach ($vars as $var) {
-            echo '<pre>';
-            var_export($var);
-            echo '</pre><hr>';
-        }
-    }
-
     if (isset($_POST['btn_upload'])) {
         for ($i = 0; $i < count($_FILES['file_img']['name']); $i++) {
             $filetmp = $_FILES["file_img"]["tmp_name"][$i];
