@@ -5,7 +5,7 @@
     <title>Untitled Document</title>
 </head>
 <body>
-    <form action="a.php" method="post" enctype="multipart/form-data">
+    <form action="b.php" method="post" enctype="multipart/form-data">
         <input type="file" name="file_img[]" multiple>
         <input type="submit" name="btn_upload" value="Upload">
     </form>
@@ -26,6 +26,7 @@
     }
 
     if (isset($_POST['btn_upload'])) {
+        $results = [];
         for ($i = 0; $i < count($_FILES['file_img']['name']); $i++) {
             $filetmp = $_FILES["file_img"]["tmp_name"][$i];
             $filename = $_FILES["file_img"]["name"][$i];
@@ -37,20 +38,18 @@
             $sql = "INSERT INTO files (file, path, type) VALUES ('$filename','$filepath','$filetype')";
             // #NOTICE: Read about SQL Injection and why above SQL is bad.
 
-            // #SOLUTION: Place 1
-
-            if ($connect->query($sql) === true) {
-                header("Location: a.php");
-                exit;  // #NOTICE: Always add `exit` after "header Location:"
-            } else {
-                header("Location: a.php");
-                exit;  // #NOTICE: Always add `exit` after "header Location:"
-            }
+            $results[$filepath] = $connect->query($sql);
         }
 
         $connect->close();
 
-        // #SOLUTION: Place 2
+        if (!in_array(false, $results, true)) {
+            header("Location: b.php");
+            exit;  // #NOTICE: Always add `exit` after "header Location:"
+        }
+
+        // #NOTICE: This is perfect place for some error handling in case
+        //     some of the files didn't upload properly
     }
     ?>
 </body>
