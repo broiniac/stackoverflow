@@ -1,6 +1,11 @@
 ID:     44346949
+
 Title:  PHP and MySQLi - Upload Multiple Image
+
 Link:   https://stackoverflow.com/questions/44346949/php-and-mysqli-upload-multiple-image
+
+Answer: https://stackoverflow.com/questions/44346949/php-and-mysqli-upload-multiple-image/44348212#44348212
+
 
 Question:
 
