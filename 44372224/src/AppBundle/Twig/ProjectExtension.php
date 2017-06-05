@@ -51,7 +51,6 @@ class ProjectExtension extends \Twig_Extension
         $this->twig = $twig;
         $this->em = $em;
         $this->requestStack = $requestStack;
-        dump($isAwesome);
     }
 
     /**
