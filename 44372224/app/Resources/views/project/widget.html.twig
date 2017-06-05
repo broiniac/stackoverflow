@@ -3,7 +3,11 @@
         <select name="widget_project_selection" id="widget_project_selection">
             <option value="">None</option>
             {% for project in projects %}
-                <option value="{{ project.id }}">
+                {# #NOTICE: If this is current project, select it #}
+                <option value="{{ project.id }}"
+                    {{- currentProject and project.id == currentProject.id
+                        ? ' selected="selected"'
+                        : '' -}}>
                     {{- project.title -}}
                 </option>
             {% endfor %}

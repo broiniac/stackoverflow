@@ -16,19 +16,29 @@ use Symfony\Component\HttpFoundation\Request;
 class ProjectController extends Controller
 {
     /**
-     * Generate pointles select input field
+     * Generate select input field.
      *
      * @Route("/widget", name="project_widget")
      * @Method("GET")
      */
     public function widgetAction()
     {
-        $projects = $this->getDoctrine()
+        $repo = $this->getDoctrine()
             ->getManager()
-            ->getRepository('AppBundle:Project')
-            ->findAll();
+            ->getRepository('AppBundle:Project');
+
+        // #NOTICE: Wee need master request info, because our widget
+        //     is rendered and called as subrequest.
+        $masterRequest = $this->get('request_stack')->getMasterRequest();
+
+        // #NOTICE: You need second parameter as default value in case there is no id in masterRequest route.
+        $currentProjectId = $masterRequest->get('id', 0);
+
+        $currentProject = $repo->find($currentProjectId);
+        $projects = $repo->findAll();
 
         return $this->render('project/widget.html.twig', [
+            'currentProject' => $currentProject,
             'projects' => $projects,
         ]);
     }
