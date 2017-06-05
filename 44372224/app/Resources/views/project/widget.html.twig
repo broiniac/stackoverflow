@@ -1,0 +1,14 @@
+<div class="widget_project_selection">
+    {% if projects is not empty %}
+        <select name="widget_project_selection" id="widget_project_selection">
+            <option value="">None</option>
+            {% for project in projects %}
+                <option value="{{ project.id }}">
+                    {{- project.title -}}
+                </option>
+            {% endfor %}
+        </select>
+    {% else %}
+        <span>{{ 'Sadly, no projects yet :('|trans }}</span>
+    {% endif %}
+</div>
