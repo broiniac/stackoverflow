@@ -33,3 +33,8 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+    # explicitly configure the service
+    AppBundle\Twig\ProjectExtension:
+        tags:
+            - { name: twig.extension }

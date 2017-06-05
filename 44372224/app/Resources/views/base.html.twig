@@ -8,8 +8,10 @@
     </head>
     <body>
         {{- render(controller('AppBundle:Project:widget')) -}}
+        {{- renderProjectSelector() -}}
 
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+
     </body>
 </html>

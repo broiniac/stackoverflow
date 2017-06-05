@@ -1,5 +1,8 @@
 <div class="widget_project_selection">
     {% if projects is not empty %}
+        {% if currentProject %}
+            {{ currentProject|renderLogo }}
+        {% endif %}
         <select name="widget_project_selection" id="widget_project_selection">
             <option value="">None</option>
             {% for project in projects %}
