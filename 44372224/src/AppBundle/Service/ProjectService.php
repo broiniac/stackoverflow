@@ -10,16 +10,6 @@ use AppBundle\Entity\Project;
 class ProjectService
 {
     /**
-     * Check is this service awesome
-     *
-     * @return bool answer!
-     */
-    public function isThisServiceAwesome()
-    {
-        return true;
-    }
-
-    /**
      * Do something important with Project.
      *
      * @param Project $project

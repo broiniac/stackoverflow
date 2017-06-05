@@ -46,8 +46,11 @@ services:
         #     $em: '@doctrine.orm.default_entity_manager'
         #     $requestStack: '@request_stack'
 
-    # # SF3.2 and below - no autowiring, need to pass some arguments:
-    # # (From my memory, sorry if not entirely correct):
+    # # SF3.2 and below - no autowiring, need to pass some arguments.
+    # # (I didn't double check, so sorry if it's not entirely correct.
+    # # Please, refer documentation before use
+    # # #SEE https://symfony.com/doc/3.2/service_container.html
+    #
     # app.twig.project_extension:
     #     class: AppBundle\Twig\ProjectExtension
     #     tags:

@@ -99,6 +99,8 @@ class ProjectExtension extends \Twig_Extension
 
     /**
      * Renders very important widget in any place you need!
+     * #NOTICE: Almost the same code as in
+     *     AppBundle:Controller:widhetAction, but it's just an example!
      *
      * @return string html with widget
      */
