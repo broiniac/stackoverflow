@@ -46,8 +46,12 @@ services:
         #     $em: '@doctrine.orm.default_entity_manager'
         #     $requestStack: '@request_stack'
 
-    #     # SF3.2 and below - no autowiring, need to pass some arguments:
-    #     # (From my memory, sorry if not entirely correct):
+    # # SF3.2 and below - no autowiring, need to pass some arguments:
+    # # (From my memory, sorry if not entirely correct):
+    # app.twig.project_extension:
+    #     class: AppBundle\Twig\ProjectExtension
+    #     tags:
+    #         - { name: twig.extension }
     #     arguments:
     #         - '@app.service.project'
     #         - '@twig'
