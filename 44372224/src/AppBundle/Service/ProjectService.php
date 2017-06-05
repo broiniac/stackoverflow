@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Service;
+
 use AppBundle\Entity\Project;
 
 /**
@@ -9,25 +10,13 @@ use AppBundle\Entity\Project;
 class ProjectService
 {
     /**
-     * usefulMethod description
+     * Check is this service awesome
      *
-     * @param string $param
-     *
-     * @return string some string
+     * @return bool answer!
      */
-    public function usefulMethod($param = 'or not')
+    public function isThisServiceAwesome()
     {
-        return $param;
-    }
-
-    /**
-     * anotherUsefulMethod description
-     *
-     * @return string some string
-     */
-    public function anotherUsefulMethod()
-    {
-        return 'yeah';
+        return true;
     }
 
     /**

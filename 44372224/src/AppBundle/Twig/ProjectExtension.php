@@ -44,12 +44,14 @@ class ProjectExtension extends \Twig_Extension
         ProjectService $projectService,
         Twig_Environment $twig,
         EntityManager $em,
-        RequestStack $requestStack
+        RequestStack $requestStack,
+        $isAwesome = false
     ) {
         $this->projectService = $projectService;
         $this->twig = $twig;
         $this->em = $em;
         $this->requestStack = $requestStack;
+        dump($isAwesome);
     }
 
     /**

@@ -38,3 +38,22 @@ services:
     AppBundle\Twig\ProjectExtension:
         tags:
             - { name: twig.extension }
+        # SF3.3 - Autowiring on (default) - no need for passing anything
+        # SF3.3 - Autowiring off:
+        # arguments:
+        #     $projectService: '@AppBundle\Service\ProjectService'
+        #     $twig: '@twig'
+        #     $em: '@doctrine.orm.default_entity_manager'
+        #     $requestStack: '@request_stack'
+
+    #     # SF3.2 and below - no autowiring, need to pass some arguments:
+    #     # (From my memory, sorry if not entirely correct):
+    #     arguments:
+    #         - '@app.service.project'
+    #         - '@twig'
+    #         - '@doctrine.orm.default_entity_manager'
+    #         - '@request_stack'
+    #
+    #     # Also we need to define service as service
+    # app.service.project:
+    #     class: AppBundle\Service\ProjectService
